@@ -1,0 +1,82 @@
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 1rem;
+    background-color: #14141338;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+.header__logo {
+    z-index: 1000;
+}
+.header__logo img {
+    width: 150px;
+}
+.header__menu__toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    visibility: hidden;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    background-color: var(--color-primary);
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+    opacity: 0;
+}
+.header__menu__toggle li {
+list-style: none;
+}
+.header__menu__toggle li a {
+font-size: clamp(2.5rem, 4vw, 6rem);
+color: var(--color-secondary);
+box-sizing: border-box;
+opacity: .5;
+transition: opacity .3s ease-in-out;
+}
+.header__menu__toggle li a:hover {
+font-weight: 700;
+color: var(--color-tertiary);
+font-style: italic;
+opacity: 1;
+}
+.header__nav__toggle__button {
+display: flex;
+flex-direction: column;
+justify-content: center;
+position: absolute;
+height: 20px;
+overflow: hidden;
+top: 30px;
+right: 20px;
+z-index: 100;
+}
+.header__nav__toggle__button:hover button {
+transform: translate(0, -20px);
+}
+.header__nav__toggle__button button {
+padding: 10px;
+font-size: 1rem;
+color: var(--color-secondary);
+background-color: transparent;
+border: none;
+cursor: pointer;
+letter-spacing: 1px;
+transform: translate(0, 20px);
+transition: transform .2s ease-in-out;
+}
+.header__nav__toggle__button button:nth-child(2) {
+color: var(--color-tertiary);
+}
+.header__menu__toggle.active {
+visibility: visible;
+opacity: 1;
+}
